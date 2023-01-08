@@ -1,21 +1,22 @@
 <?php
+
 /**
  * 
  *   Главная страница
  * 
  */
-	$header_config = [
-		'title' => 'Главная страница',
-		'style' => 'index.css'
-	];
-	include('parts/header.php');
+$header_config = [
+	'title' => 'Главная страница',
+	'style' => 'index.css'
+];
+include('parts/header.php');
 ?>
 
-	<div>Главная страница</div>
+<div>Моя Главная страница</div>
 
-<?php 
-	$footer_config = [
-		'script' => 'index.js'
-	];
-	include('parts/footer.php');
+<?php
+$footer_config = [
+	'script' => 'index.js'
+];
+include('parts/footer.php');
 ?>
