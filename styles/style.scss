@@ -16,19 +16,24 @@
 	box-sizing: border-box;
 }
 
+html,
 body {
 	font-family:  'Lato', sans-serif;
-	background-color: rgb(255, 255, 255);
+	font-size: 14px;	
+	background-color: rgba(243, 240, 240, 0.23);
+	color: rgb(48, 48, 48);
+	height: 100%;
 }
 
 // общий контейнер
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
-}
-
-header {
-	margin-top: 36px;
+	padding: 10px 5px;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(255, 255, 255);
 }
 
 .header {
@@ -44,9 +49,8 @@ header {
 
 
 	& a:not(:first-child) {
-		font-size: 14px;
-		text-decoration: none;
 		color: rgb(48, 48, 48);
+		text-decoration: none;
 		line-height: 3.071;
 		margin-left: 32px;
 	}
@@ -75,9 +79,8 @@ header {
 		}		
 
 	& a {
-		font-size: 14px;
-		text-decoration: none;
 		color: rgb(48, 48, 48);
+		text-decoration: none;
 		line-height: 3.071;
 	}
 }
@@ -91,7 +94,73 @@ header {
 	width: 42px;
 }
 
+.main {
+	flex: 1 1 auto;
+}
 
+.footer {
+	font-size: 12px;
+	line-height: 1.917;
+	text-align: left;
+	display: flex;
+
+	&-item:not(:last-child) {
+		border-right: 1px solid grey;
+	}
+
+	&-item {
+		width: 33.333%;
+		display: flex;
+		justify-content: center;
+	
+		&-contain {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	& a {
+		color: rgb(48, 48, 48);
+		text-decoration: none;
+	}
+
+	& h2 {
+		font-size: 14px;
+		text-transform: uppercase;
+		line-height: 2.5;
+		text-align: left;
+	}
+	
+	&-icon {
+		padding-top: 20px;
+
+		&_vk {
+			display: inline-block;
+			background: url('/images/vk.png') no-repeat center;
+			background-size: contain;
+			height: 33px;
+			width: 33px;
+		}
+
+		&_tele {
+			display: inline-block;
+			background: url('/images/telegram.png') no-repeat center;
+			background-size: contain;
+			height: 33px;
+			width: 33px;
+			margin-left: 10px;
+		}
+		
+		&_insta {
+			display: inline-block;
+			background: url('/images/insta.png') no-repeat center;
+			background-size: contain;
+			height: 33px;
+			width: 33px;
+			margin-left: 10px;
+		}
+	}
+}
 
 
 // Лоадер

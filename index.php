@@ -12,7 +12,11 @@ $header_config = [
 include('parts/header.php');
 ?>
 
-<div>Моя Главная страница</div>
+<main class="main">
+
+	<div>Моя Главная страница</div>
+
+</main>
 
 <?php
 $footer_config = [
