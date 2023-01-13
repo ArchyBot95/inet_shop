@@ -12,12 +12,15 @@ $header_config = [
 include('header.php');
 ?>
 
-<div class="about">
-	<div class="about-title">О нас</div>
-	<div class="about-content">Тут должен быть огромный текст говорящий
-		какие мы крутые и офигенные (если что это так и есть!!!)
+<maim class="main">
+	<div class="about">
+		<div class="about-title">О нас</div>
+		<div class="about-content">Тут должен быть огромный текст говорящий
+			какие мы крутые и офигенные (если что это так и есть!!!)
+		</div>
 	</div>
-</div>
+</maim>
+
 
 <?php
 include('footer.php');

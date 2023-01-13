@@ -61,9 +61,15 @@ include('parts/header.php');
 	<div class="sing-up">
 		<h2>Будь всегда в курсе выгодных предложений</h2>
 		<p>Подписывайся и следи за новинками и выгодными предложениями.</p>
-		<div>
+		<form class="mailing" method="GET">
+			<div class="mailing-element">
+				<input type="text" placeholder="e-mail" name="email">
+				<input type="submit" value="Записаться">
+			</div>
 
-		</div>
+			<div class="mailing-error">Некорректный e-mail. Попробуйте еще раз!</div>
+			<div class="mailing-validate"></div>
+		</form>
 	</div>
 
 </main>

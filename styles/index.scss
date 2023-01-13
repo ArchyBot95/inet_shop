@@ -240,3 +240,50 @@
 		margin-bottom: 50px;
 	}
 }
+
+.mailing {
+	margin-top: 60px;
+
+	&-element {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+input[type="text"] {
+	display: block;
+	width: 475px;
+	height: 50px;
+	padding: 15px;
+	border: solid rgb(149, 149, 149);
+	border-width: 1px 0 1px 1px;
+	outline: none;
+	font-style: italic;
+}
+
+input[type="submit"] {
+	display: block;
+	width: 135px;
+	height: 50px;
+	border: 1px solid red;
+	background-color: orange;
+	outline: none;
+	color: #fff;
+}
+
+
+.mailing-error {
+	margin-top: 20px;
+	display: none;
+	font-style: italic;
+	color: red;
+	text-align: center;
+}
+
+.mailing-validate {
+	margin-top: 20px;
+	display: none;
+	font-style: italic;
+	color: rgb(0, 247, 0);
+	text-align: center;
+}
