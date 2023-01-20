@@ -28,9 +28,9 @@ include('header_conf.php');
 			<div class="header">
 				<nav class="menu">
 					<a href="/index.php" class="logo"></a>
-					<a href="/catalog.php">Женщинам</a>
-					<a href="/catalog.php">Мужчинам</a>
-					<a href="/catalog.php">Детям</a>
+					<a href="/catalog.php?category_id=1">Женщинам</a>
+					<a href="/catalog.php?category_id=2">Мужчинам</a>
+					<a href="/catalog.php?category_id=3">Детям</a>
 					<a href="/catalog.php">Новинки</a>
 					<a href="/parts/about.php">О нас</a>
 				</nav>

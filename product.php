@@ -31,14 +31,17 @@ if (!empty($_GET['id'])) {
 }
 ?>
 
-<div class="product">
-	<div class="product-img" style="background-image: url(<?= $template['img_url'] ?>);"></div>
-	<div class="product-name"><?= $template['name'] ?></div>
-	<div class="product-price"><?= $template['price'] ?> руб.</div>
-	<div class="product-description"><?= $template['description'] ?></div>
+<main class="main">
+	<div class="product">
+		<div class="product-img" style="background-image: url(<?= $template['img_url'] ?>);"></div>
+		<div class="product-name"><?= $template['name'] ?></div>
+		<div class="product-price"><?= $template['price'] ?> руб.</div>
+		<div class="product-description"><?= $template['description'] ?></div>
 
-	<div class="product-btn">Добавить в корзину</div>
-</div>
+		<div class="product-btn" data-product-id=<?= $template['id'] ?>>Добавить в корзину</div>
+	</div>
+</main>
+
 
 <?php
 $footer_config = [
