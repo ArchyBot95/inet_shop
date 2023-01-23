@@ -10,13 +10,19 @@ $result_get_categories = mysqli_query($link, $sql_get_categories);
 // d($_POST);
 // Сохраниение данных в базе
 if (isset($_POST['add'])) {
-	$sql_add = "INSERT INTO products (id, img_url, name, description, price)
+	// Добовление товара
+	$sql_add_product = "INSERT INTO products (id, img_url, name, description, price)
 	VALUE (null, '{$_POST['img_url']}', '{$_POST['name']}', '{$_POST['description']}', {$_POST['price']})";
 
-	$result_add = mysqli_query($link, $sql_add);
+	$result_add_product = mysqli_query($link, $sql_add_product);
 	$id = mysqli_insert_id($link);
 
-	if ($result_add) {
+	// Привязываем товар к категории
+	$sql_set_category = "INSERT INTO product_category VALUE (null, $id, '{$_POST['category']}')";
+	$result_set_category = mysqli_query($link, $sql_set_category);
+
+
+	if ($result_add_product && $result_set_category) {
 		echo '<div class="alert alert-success" role="alert">
 				Ваши товар добавлен! (<a href="/admin/product_edit.php?id={$id}">Редактировать</a>)
 			</div>';
