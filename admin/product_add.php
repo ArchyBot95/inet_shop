@@ -1,10 +1,11 @@
 <?php
+
 include('parts/header.php');
 
-// Если не передан параметр id делаем редирект на страницу с товаром
-// if (!isset($_GET['id']) || isset($_GET['id']) && empty($_GET['id'])) {
-// 	header('Location: /admin/products.php');
-// }
+$sql_get_categories = "SELECT * FROM categories";
+$result_get_categories = mysqli_query($link, $sql_get_categories);
+
+
 
 // d($_POST);
 // Сохраниение данных в базе
@@ -54,6 +55,12 @@ if (isset($_POST['add'])) {
 	<div class="mb-3">
 		<input type="text" class="form-control" placeholder="Цена" name="price">
 	</div>
+
+	<select class="form-select form-select-sm mb-3" placeholder="Категория" name="category">
+		<?php while ($row = mysqli_fetch_assoc($result_get_categories)) : ?>
+			<option value="<?= $row['id'] ?>"><?= $row['name']; ?></option>
+		<?php endwhile; ?>
+	</select>
 
 	<button type="submit" class="btn btn-primary">Сохранить</button>
 </form>
