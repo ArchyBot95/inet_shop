@@ -25,6 +25,8 @@ $category = mysqli_fetch_assoc($result);
 // SELECT products.* FROM products INNER JOIN product_category ON products.id = product_category.product_id WHERE product_category.category_id = 1
 ?>
 
+
+
 <div class="catalog" data-category-id="<?= $category['id'] ?>">
 	<div class="catalog-header">
 		<h1 class="catalog-title"><?= $category['name'] ?></h1>
