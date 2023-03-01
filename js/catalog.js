@@ -128,3 +128,23 @@ class Product {
 
 const catalog = new Catalog();
 catalog.load();
+
+
+$sortingCatalog = document.querySelector('.sorting-catalog');
+$catalogItemNew = document.querySelectorAll('.sorting-catalog-item');
+$sortingCatalog.addEventListener('click', () => {
+	if ($sortingCatalog.classList.contains('arrow-up')) {
+		$sortingCatalog.classList.remove('arrow-up');
+	} else {
+		$sortingCatalog.classList.add('arrow-up');
+	}
+	$catalogItemNew.forEach(function (item) {
+		if (item.classList.contains('active')) {
+			item.classList.remove('active');
+			item.style.display = 'none';
+		} else {
+			item.classList.add('active');
+			item.style.display = 'block';
+		}
+	});
+})

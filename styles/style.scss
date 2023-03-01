@@ -4,7 +4,6 @@
 *
 */
 
-
 @font-face {
 	font-family: "Lato";
 	src: url("../fonts/lato/Lato-Regular.ttf");
@@ -14,14 +13,16 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	text-decoration: none;
 }
 
 html,
 body {
-	font-family:  'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	color: rgb(48, 48, 48);
 	height: 100%;
+	counter-reset: section;
 }
 
 // общий контейнер
@@ -45,7 +46,6 @@ body {
 	display: flex;
 	justify-content: center;
 
-
 	& a:not(:first-child) {
 		color: rgb(48, 48, 48);
 		text-decoration: none;
@@ -59,21 +59,21 @@ body {
 	align-items: center;
 
 	& .account-img {
-			display: inline-block;
-			background: url('/images/account.png') no-repeat center;
-			background-size: cover;
-			height: 29px;
-			width: 29px;
-		}
+		display: inline-block;
+		background: url("/images/account.png") no-repeat center;
+		background-size: cover;
+		height: 29px;
+		width: 29px;
+	}
 
 	& .basket-img {
-			margin-left: 50px;
-			display: inline-block;
-			background: url('/images/basket.png') no-repeat center;
-			background-size: contain;
-			height: 30px;
-			width: 30px;
-		}		
+		margin-left: 50px;
+		display: inline-block;
+		background: url("/images/basket.png") no-repeat center;
+		background-size: contain;
+		height: 30px;
+		width: 30px;
+	}
 
 	& a {
 		color: rgb(48, 48, 48);
@@ -82,10 +82,9 @@ body {
 	}
 }
 
-
 .logo {
 	display: inline-block;
-	background: url('/images/logo.jpg') no-repeat center;
+	background: url("/images/logo.jpg") no-repeat center;
 	background-size: contain;
 	height: 42px;
 	width: 42px;
@@ -109,7 +108,7 @@ body {
 		width: 33.333%;
 		display: flex;
 		justify-content: center;
-	
+
 		&-contain {
 			display: flex;
 			flex-direction: column;
@@ -127,13 +126,13 @@ body {
 		line-height: 2.5;
 		text-align: left;
 	}
-	
+
 	&-icon {
 		padding-top: 20px;
 
 		&_vk {
 			display: inline-block;
-			background: url('/images/vk.png') no-repeat center;
+			background: url("/images/vk.png") no-repeat center;
 			background-size: contain;
 			height: 33px;
 			width: 33px;
@@ -141,16 +140,16 @@ body {
 
 		&_tele {
 			display: inline-block;
-			background: url('/images/telegram.png') no-repeat center;
+			background: url("/images/telegram.png") no-repeat center;
 			background-size: contain;
 			height: 33px;
 			width: 33px;
 			margin-left: 10px;
 		}
-		
+
 		&_insta {
 			display: inline-block;
-			background: url('/images/insta.png') no-repeat center;
+			background: url("/images/insta.png") no-repeat center;
 			background-size: contain;
 			height: 33px;
 			width: 33px;
@@ -158,7 +157,6 @@ body {
 		}
 	}
 }
-
 
 // Лоадер
 .loader {
@@ -174,7 +172,99 @@ body {
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.5);
 
-	&.show{
+	&.show {
 		display: flex;
 	}
+}
+
+// .bredcrumb {
+// 	display: none;
+// 	margin: 10px;
+
+// 	&-item {
+// 		color: blue;
+// 	}
+
+// 	&-item:not(:first-child) {
+// 		position: relative;
+// 		margin-left: 10px;
+
+// 		&::before {
+// 			position: absolute;
+// 			left: -20%;
+// 			top: 35%;
+// 			content: '';
+// 			border-width: 1px 1px 0px 0px;
+// 			border-color: grey;
+// 			border-style: solid;
+// 			width: 5px;
+// 			height: 5px;
+// 			transform: rotate(45deg);
+// 		}
+// 	}
+// }
+
+// .active {
+// 	color: grey;
+// }
+
+.breadcrumbs {
+	display: inline-block;
+	margin: 15px 10px;
+	color: black;
+	box-shadow: 0 0 2px #aaa;
+}
+
+.breadcrumbs a {
+	position: relative;
+	float: left;
+	padding-left: 35px;
+	padding-right: 10px;
+	text-decoration: none;
+	line-height: 36px;
+	color: black;
+	background: white;
+	transition: all 0.5s;
+}
+.breadcrumbs a:first-child {
+	padding-left: 30px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -1px;
+		left: -20px;
+		z-index: 1;
+		width: 36px;
+		height: 36px;
+		border: solid #ddd;
+		background: white;
+		// box-shadow: 1px 1px 0 1px #ddd;
+		border-width: 0px 2px 2px 0px;
+		border-radius: 50px 0 0 0;
+		transform: rotate(-45deg) scale(0.73);
+		transition: all 0.5s;
+	}
+}
+
+.breadcrumbs a::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -18px;
+	z-index: 1;
+	width: 36px;
+	height: 36px;
+	background: white;
+	box-shadow: 1px 1px 0 1px #ddd;
+	border-radius: 50px 0 0 0;
+	transform: rotate(-45deg) scale(0.73);
+	transition: all 0.5s;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:hover::after,
+.breadcrumbs a.active,
+.breadcrumbs a.active::after {
+	background: #f1c40f;
 }

@@ -14,6 +14,7 @@ include('parts/header.php');
 
 <main class="main">
 
+
 	<div class="slider">
 		<h1>Новые поступления весны</h1>
 		<p>Мы подготовили для Вас лучшие новинки сезона</p>
